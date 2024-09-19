@@ -11,6 +11,8 @@ commodities = ['CL=F', 'BZ=F', 'NG=F']  # WTI Crude Oil, Brent Crude Oil, Natura
 # Download historical data (adjusted close prices)
 data = yf.download(commodities, start='2010-01-01', end='2023-09-01')['Adj Close']
 
+print(data) #debug
+
 # Calculate daily log returns
 log_returns = np.log(data / data.shift(1))
 
