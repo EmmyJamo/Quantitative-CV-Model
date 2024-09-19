@@ -1,0 +1,56 @@
+########################################### Research Notes ###########################################
+
+Yes, I can use my GPU for neural networks and transformer models using AMD libraries.
+
+Looks like a transformer model may be the most challenging but most rewarding to create since coding myself  -  check if libraries exist in Python so I can compare my results
+
+As of 19/09/2024, I plan to create a linear regression model using the following factors to measure the risk for multiple assets in a market. Then after make a neural network or transformer model.
+
+
+# Potential risk factors to measure
+
+Volatility: The most basic measure of risk for stocks. You can calculate it using the standard deviation of log returns over a specified period.
+
+Value-at-Risk (VaR): Estimates the maximum expected loss over a specific time horizon with a given confidence level (e.g., a 95% VaR means there’s a 5% chance the loss will exceed this value).
+
+Expected Shortfall (ES): This takes VaR one step further by estimating the average loss given that the loss exceeds the VaR threshold.
+
+Beta: Measures the risk of an asset relative to the overall market.
+
+Sharpe Ratio: Risk-adjusted return measure, dividing excess return by the asset's volatility.
+
+Once I have done this I will try to create a neural network or transformer model - although time is of the essence 
+
+
+########################################### Linear Regression Model Notes ###########################################
+
+# Feature Engineering Ideas
+
+Volatility: Calculate rolling volatility (standard deviation of log returns) over a specific period (e.g., 30 days). This gives an estimate of the asset's risk.
+
+Value-at-Risk (VaR): Use historical simulation or parametric VaR to estimate the maximum expected loss over a given time horizon (e.g., 95% VaR over 1 day).
+
+Expected Shortfall (ES): Calculate the average loss in cases where the loss exceeds the VaR threshold.
+
+Beta: Compute Beta by regressing the asset’s returns against the market index returns. Beta shows how sensitive the asset is to market movements.
+
+Sharpe Ratio: Calculate the excess return (returns minus the risk-free rate) divided by the asset's volatility.
+
+
+# Model Training 
+
+To use MSE? Or out-of-sample Sharpe ratio for model training
+
+
+# Model Evaluation
+
+MAE? - Have used this in other projects
+
+
+#### Beginning to create the model ####
+
+First, I need to import the data, so choose a market, assets within the market and an API where I can get the measurements I need.
+
+Welcome to Alpha Vantage! Your API key is: K9GL21GDULQVUWNM. Please record this API key at a safe place for future data access.
+
+
