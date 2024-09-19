@@ -1,6 +1,6 @@
 ########################################### Research Notes ###########################################
 
-Yes, I can use my GPU for neural networks and transformer models using AMD libraries.
+I can use my GPU for neural networks and transformer models using AMD libraries!
 
 Looks like a transformer model may be the most challenging but most rewarding to create since coding myself  -  check if libraries exist in Python so I can compare my results
 
@@ -51,6 +51,31 @@ MAE? - Have used this in other projects
 
 First, I need to import the data, so choose a market, assets within the market and an API where I can get the measurements I need.
 
-Welcome to Alpha Vantage! Your API key is: K9GL21GDULQVUWNM. Please record this API key at a safe place for future data access.
+Welcome to Alpha Vantage! Your API key is: K9GL21GDULQVUWNM. Please record this API key in a safe place for future data access.
+
+Let's use Yahoo Finance as it has a good API rate limit - il work out the measures - good to learn too
+
+Let's go with the commodities market and focus on energy, as that's related to what I do as a job and could link to a potential energy price prediction innovation project we have coming up!
+
+WTI Crude Oil (West Texas Intermediate): 'CL=F'
+Brent Crude Oil: 'BZ=F'
+Natural Gas: 'NG=F'
+Heating Oil: 'HO=F'
+Gasoline (RBOB): 'RB=F'
+
+I am getting inf values in my log data for price movement, so I am removing them and forward filling the data - not sure if I should replace with 0 - one to review
+
+As I am trying to create a model which 'trades' multiple assets at once for small gains I am going to move away from energy commodities.
+
+Not sure to 'trade' stocks as so many things can influence them. I might stick with macro-influenced items such as forex or commodities - hmmmmmmmmm 
+
+To create benchmarks of returns I am going to use the SNP 500 - is this a good idea? bonds better - to review
+
+
+Having NaN problems when working out all of these indicators - I see why people pay for them to be provided lol
+
+
+
+
 
 
