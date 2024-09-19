@@ -18,14 +18,20 @@ log_returns = np.log(data / data.shift(1))
 volatility = log_returns.rolling(window=30).std()
 
 # Calculate Sharpe Ratio (annualized using 252 trading days)
-risk_free_rate = 0.01  # Assuming 1% annual risk-free rate (adjust if needed)
+risk_free_rate = 0.01  # Assuming 1% annual risk-free rate - is this a good rate, to review!
 sharpe_ratio = (log_returns.mean() * 252 - risk_free_rate) / (log_returns.std() * np.sqrt(252))
 
-# Print a sample of the calculated data
-print(f"Volatility for commodities:\n{volatility.head()}")
-print(f"Sharpe Ratios:\n{sharpe_ratio}")
+# Now saving the data to an Excel file with two sheets
+file_name = 'commodities_risk_data.xlsx'
 
-# Optionally save the data to a CSV for further analysis
-volatility.to_csv('commodities_volatility.csv')
-sharpe_ratio.to_csv('commodities_sharpe_ratio.csv')
+# Creating an Excel writer
+with pd.ExcelWriter(file_name) as writer:
+    # Write Volatility data to the first sheet
+    volatility.to_excel(writer, sheet_name='Volatility')
+    
+    # Write Sharpe Ratio data to the second sheet
+    sharpe_ratio.to_excel(writer, sheet_name='Sharpe Ratio')
+
+# File saved
+print(f"Data saved to {file_name}")
 
